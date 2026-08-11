@@ -25,9 +25,7 @@ function Dashboard() {
   const [editTitle, setEditTitle] = useState("");
   const [editDescription, setEditDescription] = useState("");
 
-  // =========================
-  // GET TASKS
-  // =========================
+  
   const fetchTasks = async () => {
     try {
       const response = await API.get("/tasks");
@@ -41,9 +39,7 @@ function Dashboard() {
     fetchTasks();
   }, []);
 
-  // =========================
-  // CREATE TASK
-  // =========================
+  
   const addTask = async (e) => {
     e.preventDefault();
 
@@ -70,9 +66,7 @@ function Dashboard() {
     }
   };
 
-  // =========================
-  // DELETE
-  // =========================
+  
   const deleteTask = async (id) => {
     try {
       await API.delete(`/tasks/${id}`);
@@ -85,18 +79,14 @@ function Dashboard() {
     }
   };
 
-  // =========================
-  // EDIT
-  // =========================
+  
   const startEdit = (task) => {
     setEditingTask(task._id);
     setEditTitle(task.title);
     setEditDescription(task.description || "");
   };
 
-  // =========================
-  // UPDATE
-  // =========================
+  
   const updateTask = async (id) => {
     try {
       await API.put(`/tasks/${id}`, {
@@ -117,9 +107,7 @@ function Dashboard() {
     }
   };
 
-  // =========================
-  // COMPLETE
-  // =========================
+ 
   const toggleTask = async (task) => {
     try {
       await API.put(`/tasks/${task._id}`, {
@@ -137,9 +125,6 @@ function Dashboard() {
     }
   };
 
-  // =========================
-  // LOGOUT
-  // =========================
   const logout = () => {
     localStorage.removeItem("token");
     window.location.href = "/";
@@ -159,9 +144,6 @@ function Dashboard() {
 
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
 
-        {/* =========================
-            HERO
-        ========================== */}
         <section className="relative mb-8 overflow-hidden rounded-3xl border border-[#4A2638] bg-[#1E1219] p-7 shadow-2xl shadow-black/20 sm:p-9">
 
           <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#831843] opacity-30 blur-3xl" />
@@ -187,9 +169,7 @@ function Dashboard() {
 
         </section>
 
-        {/* =========================
-            STATS
-        ========================== */}
+       
         <section className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
 
           <div className="rounded-2xl border border-[#3A202D] bg-[#1E1219] p-5 transition hover:-translate-y-1 hover:border-[#831843]">
@@ -260,9 +240,7 @@ function Dashboard() {
 
         </section>
 
-        {/* =========================
-            ADD TASK
-        ========================== */}
+      
         <section className="mb-10 rounded-3xl border border-[#3A202D] bg-[#1E1219] p-6 shadow-xl shadow-black/20 sm:p-7">
 
           <div className="mb-6 flex items-center gap-4">
@@ -332,9 +310,7 @@ function Dashboard() {
 
         </section>
 
-        {/* =========================
-            TASKS
-        ========================== */}
+       
         <section>
 
           <div className="mb-5 flex items-end justify-between">
@@ -362,7 +338,7 @@ function Dashboard() {
 
           </div>
 
-          {/* EMPTY */}
+        
           {tasks.length === 0 ? (
 
             <div className="rounded-3xl border border-dashed border-[#4A2638] bg-[#1E1219] px-6 py-16 text-center">
@@ -397,7 +373,7 @@ function Dashboard() {
                   }`}
                 >
 
-                  {/* EDIT MODE */}
+                 
                   {editingTask === task._id ? (
 
                     <div className="space-y-4">
@@ -450,7 +426,7 @@ function Dashboard() {
                   ) : (
 
                     <>
-                      {/* TASK CONTENT */}
+                      
                       <div className="flex items-start gap-3">
 
                         <button
@@ -509,7 +485,6 @@ function Dashboard() {
 
                       </div>
 
-                      {/* ACTIONS */}
                       <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-[#3A202D] pt-4">
 
                         <button

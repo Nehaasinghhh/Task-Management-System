@@ -42,7 +42,7 @@ function Login() {
 
         <div className="w-full max-w-md">
 
-          {/* LOGO */}
+          
           <div className="mb-8 text-center">
 
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#E11D72] text-white shadow-xl shadow-[#E11D72]/20">
@@ -59,7 +59,7 @@ function Login() {
 
           </div>
 
-          {/* CARD */}
+         
           <div className="rounded-3xl border border-[#3A202D] bg-[#1E1219] p-6 shadow-2xl shadow-black/30 sm:p-8">
 
             <form
@@ -67,7 +67,7 @@ function Login() {
               className="space-y-5"
             >
 
-              {/* EMAIL */}
+             
               <div>
 
                 <label className="mb-2 block text-sm font-semibold text-[#FDF2F8]">
@@ -96,7 +96,6 @@ function Login() {
 
               </div>
 
-              {/* PASSWORD */}
               <div>
 
                 <label className="mb-2 block text-sm font-semibold text-[#FDF2F8]">
@@ -125,7 +124,7 @@ function Login() {
 
               </div>
 
-              {/* BUTTON */}
+              
               <button
                 type="submit"
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#E11D72] py-3 font-semibold text-white shadow-lg shadow-[#E11D72]/20 transition hover:bg-[#BE185D] active:scale-[0.98]"
